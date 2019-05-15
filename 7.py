@@ -1,14 +1,22 @@
-A=input("write?")
-def longestPalindrome(A):
-    rev = A[::-1]
-    l = len(A)
-    while l > 0:
-        for i in range(0, len(A) - l + 1):
-            half = int(l / 2)
-            left = A[i : i + half]
-            right = rev[len(A) - (i + l) : len(A) - (i + l - half)]
-            if left == right:
-                return A[i:i+l]
-        l -= 1
-    return None
-print (longestPalindrome(A))
+a= input ("string?")
+def substrings(s):
+
+    #length of s
+    l = len(s)
+
+    #Here I chose range over xrange
+    for end in range(l, 0, -1):
+        for i in range(l-end+1):
+            yield s[i: i+end]
+
+# Define palindrome.
+def palindrome(s):
+    return s == s[::-1]
+
+# Main function.
+def question2(a):
+    for l in substrings(a):
+        if palindrome(l):
+            return l
+print (question2(a))
+
