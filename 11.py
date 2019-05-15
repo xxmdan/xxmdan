@@ -1,6 +1,5 @@
 def check_palindrome(s):
-     """Checks whether the given string is palindrome"""
-     return s == s[::-1]
+    return s == s[::-1]
 
 max_product = 0
 a = b = 0
